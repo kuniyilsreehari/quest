@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:thread/student.dart';
+import 'package:thread/teacher.dart';
+import 'package:thread/teachers_dashboard.dart';
 
-import 'Registration 2.dart';
-import 'Registration.dart';
+import 'Announcement.dart';
+import 'Employee 2.dart';
+import 'Employee 1.dart';
+import 'Employer.dart';
 import 'Splash_screen.dart';
 import 'drawer_page.dart';
 import 'login.dart';
+import 'new_dashboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,8 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home:Registration(),
+      home:Batch(),
     );
   }
 }
-
