@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+List<String> listitem=[
+  'Environmental Studies','Social Studies','Fundamentals of Computer'
+];
+
 class Batch extends StatefulWidget {
   const Batch({Key? key}) : super(key: key);
 
@@ -16,7 +20,9 @@ class _BatchState extends State<Batch> {
       appBar: AppBar(
         bottom: const TabBar(tabs:[
           Tab(text: 'DETAILS'),
-          Tab(text: 'DETAILS'),
+          Tab(text: 'ANNOUNCEMENT'),
+          Tab(text: 'VIDEOS'),
+          Tab(text: 'STUDY METERIALS'),
 
         ] ),
         title: Text("NEW BATCH"),
@@ -43,7 +49,31 @@ class _BatchState extends State<Batch> {
             ],
           ),
         ],
-      )),
+      ),
+        body: TabBarView(children: [
+          Container(
+            child: ListView.builder(itemCount: listitem.length,
+                itemBuilder: (context, index){
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.white,
+                      title: Text(
+                        listitem[index],
+                        style: TextStyle(fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      contentPadding: EdgeInsets.symmetric(vertical: 25, horizontal: 16),
+                    ),
+                  );
+                }
+            ),
+          )
+        ],),
+      ),
     );
   }
 }
+
+
